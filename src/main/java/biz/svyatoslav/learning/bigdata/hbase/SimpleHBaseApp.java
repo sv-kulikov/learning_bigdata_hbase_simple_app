@@ -11,6 +11,8 @@ import java.io.IOException;
 // This example is based on https://github.com/eugenp/tutorials/tree/master/persistence-modules/hbase
 // Millions of "Thank You" to Eugen for providing an example that really works :)
 
+// Use JDK 11 !!!
+
 public class SimpleHBaseApp {
 
     public static void main(String[] args) throws IOException {
