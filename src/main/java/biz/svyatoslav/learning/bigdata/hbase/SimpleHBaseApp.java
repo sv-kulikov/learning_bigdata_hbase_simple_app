@@ -23,7 +23,10 @@ public class SimpleHBaseApp {
     private void connect() throws IOException {
         // See "resources/hbase-site.xml"!
         // Make sure tu put correct ip of your HBase docker container there!
+
         // And check if HBase is running :).
+        // Or run it: docker start hbase
+
         // On the first run you'll probably get "can not resolve HOSTNAME" exception,
         // in this case put into /etc/hosts the ip:HOSTNAME for your docker container.
 
