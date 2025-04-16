@@ -25,6 +25,9 @@ public class SimpleHBaseApp {
         // On the first run you'll probably get "can not resolve HOSTNAME" exception,
         // in this case put into /etc/hosts the ip:HOSTNAME for your docker container.
 
+        // To get ip:
+        // docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' hbase
+
         Configuration config = HBaseConfiguration.create();
         String path = this.getClass().getClassLoader().getResource("hbase-site.xml").getPath();
         config.addResource(new Path(path));
@@ -33,7 +36,7 @@ public class SimpleHBaseApp {
             HBaseAdmin.available(config);
             System.out.println("HBase is accessible!");
         } catch (MasterNotRunningException e) {
-            System.out.println("HBase is not running." + e.getMessage());
+            System.out.println("HBase is not running. (" + e.getMessage() + ")");
             return;
         }
 
